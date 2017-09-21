@@ -1,0 +1,25 @@
+<h1>Left Map loaded with {{count}} elements</h1>
+<div *ngFor="let num of numbers" id="map{{num}}">
+    <!-- <div class="col-1-4">
+        <input type="text" name="" id="map{{num}}">
+    </div> -->
+    <div class="col-1-6">
+        <input type="text" value="2" name="">
+    </div>
+    <a class="col-1-6" (click)="expand(2)">
+        <div class="module hero">
+            <h4>Map{{num}}</h4>
+        </div>
+    </a>
+    <div class="container">
+        <div *ngIf="subcount">
+            <h1>Left Sub Map loaded with {{subcount}} elements</h1>
+            <div *ngFor="let subnum of subnumbers" id="submap{{num}}_{{subnum}}">
+                <input class="col-1-6" type="text" value="submap{{num}}_key{{subnum}}" name="" id="submap{{num}}_key{{subnum}}">
+                <input class="col-1-6" type="text" value="submap{{num}}_value{{subnum}}" name="" id="submap{{num}}_value{{subnum}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="save module hero" (click)="save()">Save</a><br><br>

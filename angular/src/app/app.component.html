@@ -1,0 +1,29 @@
+<a routerLink="/home">
+  <h1>{{title}}</h1>
+</a>
+
+<div class="grid grid-pad">
+  <div class="col-1-6">
+    <input [(ngModel)]="leftcount" type="text" name="count" placeholder="Enter the number of leftmap entries" id="leftmapentry">
+  </div>
+  <a routerLink="/leftmap/{{leftcount}}" routerLinkActive="active" class="col-1-6" id="leftmap">
+    <div class="module hero leftmap">
+      <h4>Left Map</h4>
+    </div>
+  </a>
+
+  <div class="col-1-6">
+    <input [(ngModel)]="rightcount" type="text" name="count" placeholder="Enter the number of rightmap entries" id="rightmapentry">
+  </div>
+  <a routerLink="/rightmap/{{rightcount}}" routerLinkActive="active" class="col-1-6" id="rightmap">
+    <div class="module hero rightmap">
+      <h4>Right Map</h4>
+    </div>
+  </a>
+  <a routerLink="/compare" routerLinkActive="active" class="col-1-12">
+    <div class="module hero">
+      <h4>Compute Diff Map</h4>
+    </div>
+  </a>
+</div>
+<router-outlet></router-outlet>

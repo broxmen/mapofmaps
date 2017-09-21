@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>key</th>
+            <th>value1</th>
+            <th>value2</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let res of response" class="{{res.status}}">
+        <td>{{res.key}}</td>
+        <td>{{res.value1}}</td>
+        <td>{{res.value2}}</td>
+        <td>{{res.status}}</td>
+    </tr>
+</table>
+<div *ngIf="selectedMap">
+    <h2>{{selectedMap.name}} details!</h2>
+    <div><label>id: </label>{{selectedMap.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedMap.name" placeholder="name" />
+    </div>
+</div>
+<br>

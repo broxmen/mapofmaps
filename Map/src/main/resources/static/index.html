@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>test</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+<script>
+  $(document)
+		.ready(function(){
+			var d = {
+					"left" : {
+								"maincount":2,
+								"map1":{
+										"submap1_key1":"submap1_value1",
+										"submap1_key2":"submap1_value2"
+										},
+								"map2":{
+										"submap2_key1":"submap2_value1",
+										"submap2_key2":"submap2_value2"
+										}
+							},
+					"right" : {
+								"maincount":2,
+								"map1":{
+										"submap1_key1":"submap1_value1",
+										"submap1_key3":"submap1_value2"
+										},
+								"map3":{
+										"submap2_key1":"submap2_value1",
+										"submap2_key2":"submap2_value2"
+										}
+							}
+					};
+		$("#in").on("click",function(){
+			$.ajax({
+							type : "POST",
+							url : "/compare",
+							contentType : 'application/json',
+							//dataType : "json",
+							data : JSON.stringify(d),
+							success : function(result) {
+								alert(result);
+							},
+							error : function(xhr, ajaxOptions, thrownError) {
+								alert(thrownError);
+							}
+						});
+		});
+		});
+  </script>
+</head>
+<body>
+	<button id="in">click</button>
+</body>
+</html>

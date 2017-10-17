@@ -4,7 +4,7 @@ This program is a free-software; created by the team of Scholar (2017) batch (SA
 
 * Date: 2017-09-21 12:35:00  
 * Team: Service Innovation
-* Version: 1.0
+* Version: 1.1
 
 
 ## Table of Contents:
